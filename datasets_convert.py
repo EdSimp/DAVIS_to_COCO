@@ -114,9 +114,9 @@ def gen_coco_anno(annos_path, json_annos_name, dataset_path, annos_save_path):
         },
     ]
 
-    # 检测框的ID起始值
+
     START_BOUNDING_BOX_ID = 1
-    # 类别列表无必要预先创建，程序中会根据所有图像中包含的ID来创建并更新
+
     PRE_DEFINE_CATEGORIES = {}
 
     json_dict = {"images": [],
@@ -124,7 +124,7 @@ def gen_coco_anno(annos_path, json_annos_name, dataset_path, annos_save_path):
                  "annotations": [],
                  "categories": []}
 
-    json_dict["categories"].append(CATEGORIES)
+    json_dict["categories"] = CATEGORIES
 
     categories = PRE_DEFINE_CATEGORIES
     anno_id = START_BOUNDING_BOX_ID
